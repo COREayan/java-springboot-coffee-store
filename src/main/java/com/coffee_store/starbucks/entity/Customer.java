@@ -28,17 +28,21 @@ public class Customer {
     @Column(name="phone_number")
     private long phoneNumber;
 
+    @Column(name="email_id")
+    private String emailId;
+
     // define constructor 
     public Customer() {
 
     }
 
-    public Customer(int id, String firstName, String lastName, String gender, long phoneNumber) {
+    public Customer(int id, String firstName, String lastName, String gender, long phoneNumber, String emailId) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
+        this.emailId = emailId;
     }
 
     public int getId() {
@@ -79,5 +83,13 @@ public class Customer {
 
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 }

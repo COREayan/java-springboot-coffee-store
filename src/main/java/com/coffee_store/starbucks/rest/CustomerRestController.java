@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("customer")
+@RequestMapping("customers")
 public class CustomerRestController {
     
     private CustomerService customerService;
@@ -26,12 +26,12 @@ public class CustomerRestController {
         customerService = theCustomerService;
     }
 
-    @GetMapping("/customers")
+    @GetMapping("/")
     public List<Customer> findAll() {
         return customerService.findAll();
     }
     
-    @GetMapping("/customers/{customerId}")
+    @GetMapping("/{customerId}")
     public Customer findById(@RequestParam int customerId) {
         Customer theCustomer = customerService.findById(customerId);
         if (theCustomer == null) {
@@ -40,20 +40,20 @@ public class CustomerRestController {
         return theCustomer;
     }
 
-    @PostMapping("/customers")
+    @PostMapping("/")
     public Customer createCustomer(@RequestBody Customer theCustomer) {
         theCustomer.setId(0);
         Customer dbCustomer = customerService.save(theCustomer);
         return dbCustomer;
     }
     
-    @PutMapping("/customers")
+    @PutMapping("/")
     public Customer updateCustomer(@RequestBody Customer theCustomer) {
         Customer dbCustomer = customerService.save(theCustomer);
         return dbCustomer;
     }
 
-    @DeleteMapping("/customers/{customerId}")
+    @DeleteMapping("/{customerId}")
     public String deleteCustomer(@PathVariable int customerId) {
         Customer tempCustomer = customerService.findById(customerId);
 

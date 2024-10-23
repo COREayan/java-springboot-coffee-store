@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("product")
+@RequestMapping("products")
 public class ProductRestController {
     
     private ProductService productService;
@@ -26,12 +26,12 @@ public class ProductRestController {
         productService = theProductService;
     }
 
-    @GetMapping("/products")
+    @GetMapping("/")
     public List<Product> findAll() {
         return productService.findAll();
     }
     
-    @GetMapping("/products/{productId}")
+    @GetMapping("/{productId}")
     public Product findById(@RequestParam int productId) {
         Product theProduct = productService.findById(productId);
         if (theProduct == null) {
@@ -40,19 +40,19 @@ public class ProductRestController {
         return theProduct;
     }
     
-    @PostMapping("/products")
+    @PostMapping("/")
     public Product createProduct(@RequestBody Product theProduct) {
         Product dbProduct = productService.save(theProduct);
         return dbProduct;
     }
     
-    @PutMapping("/products")
+    @PutMapping("/")
     public Product updateProduct(@RequestBody Product theProduct) {
         Product dbProduct = productService.save(theProduct);
         return dbProduct;
     }
 
-    @DeleteMapping("products/{productId}")
+    @DeleteMapping("/{productId}")
     public String deleteProduct(@PathVariable int productId) {
         Product tempProduct = productService.findById(productId);
 
