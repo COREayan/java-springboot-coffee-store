@@ -1,10 +1,14 @@
 package com.coffee_store.starbucks.entity;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,7 +17,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="customer_id")
     private int id;
 
     @Column(name="first_name")
@@ -31,6 +35,10 @@ public class Customer {
     @Column(name="email_id")
     private String emailId;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Order> orders;
+
+
     // define constructor 
     public Customer() {
 
@@ -43,6 +51,17 @@ public class Customer {
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.emailId = emailId;
+    }
+
+    public Customer(int id, String firstName, String lastName, String gender, long phoneNumber, String emailId,
+            List<Order> orders) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.emailId = emailId;
+        this.orders = orders;
     }
 
     public int getId() {
@@ -92,4 +111,6 @@ public class Customer {
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
+
+    
 }
