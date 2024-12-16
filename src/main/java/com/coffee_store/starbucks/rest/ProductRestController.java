@@ -17,14 +17,10 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("products")
+@RequestMapping("/products")
 public class ProductRestController {
     
-    private ProductService productService;
-
-    public ProductRestController(ProductService theProductService) {
-        productService = theProductService;
-    }
+    private final ProductService productService;
 
     @GetMapping("/")
     public List<Product> findAll() {
@@ -61,5 +57,10 @@ public class ProductRestController {
         }
         productService.deleteById(productId);
         return "Deleted product id - " + productId;
+    }
+
+
+    public ProductRestController(ProductService theProductService) {
+        productService = theProductService;
     }
 }

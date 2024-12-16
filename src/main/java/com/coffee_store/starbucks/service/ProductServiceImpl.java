@@ -11,12 +11,7 @@ import com.coffee_store.starbucks.entity.Product;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository productRepository;
-
-    public ProductServiceImpl(ProductRepository theProductRepository) {
-        this.productRepository = theProductRepository;
-    }
-
+    private final ProductRepository productRepository;
 
     @Override
     public List<Product> findAll() {
@@ -47,5 +42,8 @@ public class ProductServiceImpl implements ProductService {
     public void deleteById(int theId) {
         productRepository.deleteById(theId);
     }
-    
+
+    public ProductServiceImpl(ProductRepository theProductRepository) {
+        this.productRepository = theProductRepository;
+    }
 }

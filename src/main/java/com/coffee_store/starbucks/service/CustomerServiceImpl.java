@@ -3,6 +3,7 @@ package com.coffee_store.starbucks.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coffee_store.starbucks.entity.Customer;
@@ -10,12 +11,8 @@ import com.coffee_store.starbucks.dao.CustomerRepository;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-    
-    private CustomerRepository customerRepository;
-    
-    public CustomerServiceImpl(CustomerRepository theCustomerRepository) {
-        this.customerRepository = theCustomerRepository;
-    }
+
+    private final CustomerRepository customerRepository;
 
     @Override
     public List<Customer> findAll() {
@@ -45,6 +42,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteById(int theId) {
         customerRepository.deleteById(theId);
+    }
+
+    public CustomerServiceImpl(CustomerRepository theCustomerRepository) {
+        this.customerRepository = theCustomerRepository;
     }
 }
 

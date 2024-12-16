@@ -23,13 +23,6 @@ public class OrderService {
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
 
-    public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository,
-            ProductRepository productRepository) {
-        this.orderRepository = orderRepository;
-        this.customerRepository = customerRepository;
-        this.productRepository = productRepository;
-    }
-
     @Transactional
     public Order placeOrder(int customerId, List<OrderItem> orderItems) {
         Optional<Customer> result = customerRepository.findById(customerId);
@@ -55,5 +48,12 @@ public class OrderService {
 
         order.setOrderItems(orderItems);
         return orderRepository.save(order);
+    }
+
+    public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository,
+                        ProductRepository productRepository) {
+        this.orderRepository = orderRepository;
+        this.customerRepository = customerRepository;
+        this.productRepository = productRepository;
     }
 }

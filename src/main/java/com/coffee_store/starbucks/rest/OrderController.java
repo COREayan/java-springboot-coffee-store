@@ -18,16 +18,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/orders")
 public class OrderController {
     
-    private OrderService orderService;
-
-    public OrderController(OrderService orderService) {
-        this.orderService = orderService;
-    }
+    private final OrderService orderService;
 
     @PostMapping("/{customerId}")
     public Order placeOrder(@PathVariable int customerId, @RequestBody List<OrderItem> orderItems) {
         return orderService.placeOrder(customerId, orderItems);
     }
-    
-    
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
 }

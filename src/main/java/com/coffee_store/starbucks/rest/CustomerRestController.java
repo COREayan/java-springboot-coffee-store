@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("customers")
+@RequestMapping("/customers")
 public class CustomerRestController {
     
     private CustomerService customerService;
@@ -32,7 +32,7 @@ public class CustomerRestController {
     }
     
     @GetMapping("/{customerId}")
-    public Customer findById(@RequestParam int customerId) {
+    public Customer findById(@PathVariable int customerId) {
         Customer theCustomer = customerService.findById(customerId);
         if (theCustomer == null) {
             throw new RuntimeException("Customer id not found - " + customerId);
