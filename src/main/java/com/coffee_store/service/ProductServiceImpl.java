@@ -1,12 +1,12 @@
-package com.coffee_store.starbucks.service;
+package com.coffee_store.service;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.coffee_store.entity.Product;
 import org.springframework.stereotype.Service;
 
-import com.coffee_store.starbucks.dao.ProductRepository;
-import com.coffee_store.starbucks.entity.Product;
+import com.coffee_store.dao.ProductRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {

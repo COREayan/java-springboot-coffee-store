@@ -1,8 +1,8 @@
-package com.coffee_store.starbucks.dao;
+package com.coffee_store.dao;
 
+import com.coffee_store.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.coffee_store.starbucks.entity.Order;
 import org.springframework.stereotype.Repository;
 
 @Repository

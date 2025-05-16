@@ -1,13 +1,12 @@
-package com.coffee_store.starbucks.service;
+package com.coffee_store.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.coffee_store.entity.Customer;
 import org.springframework.stereotype.Service;
 
-import com.coffee_store.starbucks.entity.Customer;
-import com.coffee_store.starbucks.dao.CustomerRepository;
+import com.coffee_store.dao.CustomerRepository;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {

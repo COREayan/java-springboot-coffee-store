@@ -1,8 +1,8 @@
-package com.coffee_store.starbucks.service;
+package com.coffee_store.service;
 
 import java.util.List;
 
-import com.coffee_store.starbucks.entity.Customer;
+import com.coffee_store.entity.Customer;
 
 public interface CustomerService {
     

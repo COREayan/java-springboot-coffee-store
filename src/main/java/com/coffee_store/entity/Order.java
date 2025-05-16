@@ -1,4 +1,4 @@
-package com.coffee_store.starbucks.entity;
+package com.coffee_store.entity;
 
 import java.util.ArrayList;
 import java.util.Date;

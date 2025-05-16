@@ -1,4 +1,4 @@
-package com.coffee_store.starbucks.entity;
+package com.coffee_store.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

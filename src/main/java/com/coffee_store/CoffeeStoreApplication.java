@@ -1,13 +1,13 @@
-package com.coffee_store.starbucks;
+package com.coffee_store;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StarbucksApplication {
+public class CoffeeStoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StarbucksApplication.class, args);
+		SpringApplication.run(CoffeeStoreApplication.class, args);
 	}
 
 }

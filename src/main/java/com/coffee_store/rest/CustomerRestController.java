@@ -1,17 +1,15 @@
-package com.coffee_store.starbucks.rest;
+package com.coffee_store.rest;
 
+import com.coffee_store.entity.Customer;
+import com.coffee_store.service.CustomerService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import com.coffee_store.starbucks.entity.Customer;
-import com.coffee_store.starbucks.service.CustomerService;
 
 import java.util.List;
 

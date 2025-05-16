@@ -1,11 +1,10 @@
-package com.coffee_store.starbucks.rest;
+package com.coffee_store.rest;
 
+import com.coffee_store.entity.Order;
+import com.coffee_store.entity.OrderItem;
+import com.coffee_store.service.OrderService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.coffee_store.starbucks.entity.Order;
-import com.coffee_store.starbucks.entity.OrderItem;
-import com.coffee_store.starbucks.service.OrderService;
 
 import java.util.List;
 

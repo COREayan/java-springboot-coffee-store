@@ -1,18 +1,18 @@
-package com.coffee_store.starbucks.service;
+package com.coffee_store.service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import com.coffee_store.entity.Customer;
+import com.coffee_store.entity.Order;
+import com.coffee_store.entity.OrderItem;
+import com.coffee_store.entity.Product;
 import org.springframework.stereotype.Service;
 
-import com.coffee_store.starbucks.dao.CustomerRepository;
-import com.coffee_store.starbucks.dao.OrderRepository;
-import com.coffee_store.starbucks.dao.ProductRepository;
-import com.coffee_store.starbucks.entity.Customer;
-import com.coffee_store.starbucks.entity.Order;
-import com.coffee_store.starbucks.entity.OrderItem;
-import com.coffee_store.starbucks.entity.Product;
+import com.coffee_store.dao.CustomerRepository;
+import com.coffee_store.dao.OrderRepository;
+import com.coffee_store.dao.ProductRepository;
 
 import jakarta.transaction.Transactional;
 
