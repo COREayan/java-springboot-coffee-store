@@ -11,6 +11,10 @@ Built a RESTFul backend to manage customer orders and product inventory with ful
 - Tested APIs using Postman and simlated end-toend order placement, product listing, and customer hitory retrieval workflows.
 - Configured application.properties with MySQL settings for local development and testing.
 
+ER Diagram 
+<img width="2764" height="2324" alt="image" src="https://github.com/user-attachments/assets/def710e3-8085-4dd5-bd15-e9924f3c29fe" />
+
+
 Future Scope
 - Documented API endpoints using Swagger UI for better API discoverability.
 - Implemented global exception handling using @ControllerAdvice and custom exception classes for cleaner error responses.
