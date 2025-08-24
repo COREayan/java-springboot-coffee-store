@@ -80,7 +80,8 @@ Each endpoint follows RESTful conventions with proper HTTP methods and status co
   "lastName": "Doe",
   "gender": "Male",
   "phoneNumber": "+91-9876543210"
-}```
+}
+```
 
 
 ---
