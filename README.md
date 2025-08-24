@@ -1,21 +1,43 @@
-# Java-SpringBoot Coffee Store Order Management System
+# ☕ Java Spring Boot – Coffee Store Order Management System  
 
-Built a RESTFul backend to manage customer orders and product inventory with full entity relationships. Designed POJOs for Customer, Order, OrderItem, and Product with proper JPA mappings and created CRUD endpoints for each using Spring Boot.  
+A **RESTful backend system** to manage customer orders and product inventory, built with Spring Boot and JPA. The project models real-world entity relationships—**Customer, Order, OrderItem, and Product**—with proper mappings, CRUD APIs, and a clean layered architecture.  
 
-- Designed and developed a RESTful Spring Boot application with a normalized relational data model involving multiple entities: Customer, Order, OrderItem, and Product.
-- Implemented one-to-many and many-to-one relationships using JPA annotations such as @OneToMany, @ManyToOne, and @JoinColumn to model complex real-world business logic.
-- Created DAO layer using Spring Data JPA repositories(CustomerRepository, OrderRepository, etc.) to perform seamless database operations.
-- Structured application with a clean layered architecture: Controller-Service-Repository-Entity, ensuring high maintainability and separation of concerns.
-- Designed OrderItem as a join entity between Order and Product, enabling a scalable model for itemized order details including quantity and product references.
-- Ensured data integrity and referential mapping with foreign key constraints(customer_id, order_id, product_id) through proper JPA mappings.
-- Tested APIs using Postman and simlated end-toend order placement, product listing, and customer hitory retrieval workflows.
-- Configured application.properties with MySQL settings for local development and testing.
+---
 
-ER Diagram 
-<img width="2764" height="2324" alt="image" src="https://github.com/user-attachments/assets/def710e3-8085-4dd5-bd15-e9924f3c29fe" />
+## 🚀 Key Highlights  
 
+- **Relational Data Modeling**  
+  - Designed a normalized schema with multiple entities: `Customer`, `Order`, `OrderItem`, and `Product`.  
+  - Established relationships:  
+    - `Customer → Order` (1:N)  
+    - `Order → OrderItem` (1:N)  
+    - `OrderItem → Product` (N:1)  
 
-Future Scope
-- Documented API endpoints using Swagger UI for better API discoverability.
-- Implemented global exception handling using @ControllerAdvice and custom exception classes for cleaner error responses.
-- Followed SOLID principles and best practices in code structure and entity design. 
+- **Entity & JPA Mappings**  
+  - Used `@OneToMany`, `@ManyToOne`, and `@JoinColumn` annotations to model real-world business logic.  
+  - Designed `OrderItem` as a join entity to track product, quantity, and order references.  
+  - Enforced data integrity with foreign key constraints (`customer_id`, `order_id`, `product_id`).  
+
+- **Architecture**  
+  - Structured with **Controller → Service → Repository → Entity** layers for maintainability and separation of concerns.  
+  - DAO layer implemented via **Spring Data JPA Repositories** (`CustomerRepository`, `OrderRepository`, etc.).  
+
+- **API Development & Testing**  
+  - CRUD endpoints for all entities.  
+  - Tested workflows (order placement, product listing, customer history) using **Postman**.  
+  - Configured `application.properties` with **MySQL** for local dev & testing.  
+
+---
+
+## 📊 ER Diagram  
+
+<img width="2764" height="2324" alt="ER Diagram" src="https://github.com/user-attachments/assets/def710e3-8085-4dd5-bd15-e9924f3c29fe" />  
+
+---
+
+## 🔮 Future Scope  
+
+- 📘 API documentation with **Swagger UI** for improved discoverability.  
+- ⚡ Global exception handling using `@ControllerAdvice` and custom exception classes.  
+- 🏗️ Follow **SOLID principles** and design best practices for scalability.  
+- ☁️ Extend deployment to cloud environments (AWS / GCP).  
